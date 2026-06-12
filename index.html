@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amor em Contagem Regressiva</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="heart-background" aria-hidden="true"></div>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Dia dos Namorados</p>
+        <h1>Nosso Amor Conta Cada Segundo</h1>
+        <p class="subtitle">Um carrossel com momentos, fases que compartilhamos e o tempo em que somos namorados.</p>
+      </div>
+    </section>
+
+    <section class="timer-section">
+      <div class="timer-card">
+        <h2>Tempo que somos namorados</h2>
+        <input type="hidden" id="startDate" value="2011-09-07T00:00" />
+        <div class="timer-grid">
+          <div><strong id="years">00</strong><span>Anos</span></div>
+          <div><strong id="months">00</strong><span>Meses</span></div>
+          <div><strong id="days">00</strong><span>Dias</span></div>
+          <div><strong id="hours">00</strong><span>Horas</span></div>
+          <div><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <div class="carousel" id="carousel">
+        <div class="slide active" style="background-image: url('images/Captura de tela 2026-06-12 185247.png');">
+          <div class="slide-overlay">
+            <span>Amor que faz o coração sorrir</span>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('images/Captura de tela 2026-06-12 185312.png');">
+          <div class="slide-overlay">
+            <span>Você é meu melhor capítulo</span>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('images/Captura de tela 2026-06-12 185337.png');">
+          <div class="slide-overlay">
+            <span>Cada dia é um presente</span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button id="prevBtn" aria-label="Anterior">◀</button>
+        <div class="dots" id="dots"></div>
+        <button id="nextBtn" aria-label="Próximo">▶</button>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <div class="music-card">
+        <h2>Música do nosso amor</h2>
+        <p>Ouça <strong>"Lonely Day" - System of a Down</strong> no player abaixo.</p>
+        <div class="audio-player-wrapper">
+          <audio id="audioPlayer" controls autoplay loop playsinline preload="auto">
+            <source src="audio/Sistem_Of_A_Down_-_Such_a_Lonely_day_(SkySound.cc).mp3" type="audio/mpeg" />
+            Seu navegador não suporta reprodução de áudio.
+          </audio>
+        </div>
+        <button id="playMusicBtn" class="play-music-btn">Clique para reproduzir a música</button>
+        <p class="music-note">And if you go, I wanna go with you; and if you die, I wanna die with you.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,138 +1,161 @@
-const slides = Array.from(document.querySelectorAll('.slide'));
-const dotsContainer = document.getElementById('dots');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const yearsEl = document.getElementById('years');
-const monthsEl = document.getElementById('months');
-const daysEl = document.getElementById('days');
-const hoursEl = document.getElementById('hours');
-const minutesEl = document.getElementById('minutes');
-const secondsEl = document.getElementById('seconds');
-const startDateInput = document.getElementById('startDate');
+const githubApiUrl = 'https://api.github.com/users/CaioParadizo';
+const githubReposBaseUrl = 'https://api.github.com/users/CaioParadizo/repos';
 
-let currentSlide = 0;
-let slideInterval;
-let relationshipStart = new Date(startDateInput.value);
+const githubName = document.getElementById('githubName');
+const githubBio = document.getElementById('githubBio');
+const githubAvatar = document.getElementById('githubAvatar');
+const repoCount = document.getElementById('repoCount');
+const followersCount = document.getElementById('followersCount');
+const followingCount = document.getElementById('followingCount');
+const repoGrid = document.getElementById('repoGrid');
 
-function setActiveSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-  Array.from(dotsContainer.children).forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat('pt-BR', {
+    year: 'numeric',
+    month: 'short'
+  }).format(date);
 }
 
-function createDots() {
-  slides.forEach((_, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'dot';
-    dot.addEventListener('click', () => {
-      currentSlide = index;
-      setActiveSlide(currentSlide);
-      resetSlideInterval();
-    });
-    dotsContainer.appendChild(dot);
-  });
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("theme") || "dark";
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-mode");
+  themeToggle.checked = true;
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  setActiveSlide(currentSlide);
-}
+themeToggle.addEventListener("change", () => {
 
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  setActiveSlide(currentSlide);
-}
-
-function resetSlideInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 6000);
-}
-
-function pad(value) {
-  return String(value).padStart(2, '0');
-}
-
-function updateTimer() {
-  const now = new Date();
-  if (now < relationshipStart) {
-    yearsEl.textContent = '00';
-    monthsEl.textContent = '00';
-    daysEl.textContent = '00';
-    hoursEl.textContent = '00';
-    minutesEl.textContent = '00';
-    secondsEl.textContent = '00';
-    return;
+  if (themeToggle.checked) {
+    document.body.classList.add("light-mode");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.classList.remove("light-mode");
+    localStorage.setItem("theme", "dark");
   }
 
-  let years = now.getFullYear() - relationshipStart.getFullYear();
-  let months = now.getMonth() - relationshipStart.getMonth();
-  let days = now.getDate() - relationshipStart.getDate();
-  let hours = now.getHours() - relationshipStart.getHours();
-  let minutes = now.getMinutes() - relationshipStart.getMinutes();
-  let seconds = now.getSeconds() - relationshipStart.getSeconds();
-
-  if (seconds < 0) {
-    seconds += 60;
-    minutes -= 1;
-  }
-  if (minutes < 0) {
-    minutes += 60;
-    hours -= 1;
-  }
-  if (hours < 0) {
-    hours += 24;
-    days -= 1;
-  }
-  if (days < 0) {
-    const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-    days += previousMonth;
-    months -= 1;
-  }
-  if (months < 0) {
-    months += 12;
-    years -= 1;
-  }
-
-  yearsEl.textContent = pad(years);
-  monthsEl.textContent = pad(months);
-  daysEl.textContent = pad(days);
-  hoursEl.textContent = pad(hours);
-  minutesEl.textContent = pad(minutes);
-  secondsEl.textContent = pad(seconds);
-}
-
-
-createDots();
-setActiveSlide(0);
-resetSlideInterval();
-updateTimer();
-setInterval(updateTimer, 1000);
-
-window.addEventListener('load', () => {
-  updateTimer();
-  const audioPlayer = document.getElementById('audioPlayer');
-  const playMusicBtn = document.getElementById('playMusicBtn');
-  if (audioPlayer) {
-    audioPlayer.play().catch(() => {});
-  }
-  if (playMusicBtn && audioPlayer) {
-    playMusicBtn.addEventListener('click', () => {
-      audioPlayer.play().catch(() => {});
-      playMusicBtn.style.display = 'none';
-    });
-  }
 });
 
-prevBtn.addEventListener('click', () => {
-  prevSlide();
-  resetSlideInterval();
+
+function setLanguage(lang) {
+  document.querySelectorAll("[data-pt]").forEach(element => {
+    element.textContent = element.dataset[lang];
+  });
+
+  localStorage.setItem("lang", lang);
+}
+const toggle = document.getElementById("langToggle");
+
+toggle.addEventListener("change", () => {
+  const lang = toggle.checked ? "en" : "pt";
+
+  setLanguage(lang);
+
+  localStorage.setItem("lang", lang);
 });
-nextBtn.addEventListener('click', () => {
-  nextSlide();
-  resetSlideInterval();
+
+function createRepoCard(repo) {
+  const card = document.createElement('article');
+  card.className = 'repo-card';
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => window.open(repo.html_url, '_blank'));
+
+const toggle = document.getElementById("langToggle");
+
+toggle.addEventListener("click", () => {
+  const current =
+    localStorage.getItem("lang") || "pt";
+
+  const next =
+    current === "pt" ? "en" : "pt";
+
+  setLanguage(next);
 });
+
+  const title = document.createElement('h3');
+  title.textContent = repo.name;
+
+  const description = document.createElement('p');
+  description.textContent = repo.description || 'Descrição breve não disponível.';
+
+  const meta = document.createElement('div');
+  meta.className = 'repo-meta';
+
+  const language = document.createElement('span');
+  language.textContent = repo.language ? `Linguagem: ${repo.language}` : 'Linguagem: —';
+
+  const updated = document.createElement('span');
+  updated.textContent = `Atualizado: ${formatDate(repo.updated_at)}`;
+
+  const stars = document.createElement('span');
+  stars.textContent = `⭐ ${repo.stargazers_count}`;
+
+  meta.append(language, updated, stars);
+  card.append(title, description, meta);
+  return card;
+}
+
+function showRepoError(message) {
+  repoGrid.innerHTML = `<div class="repo-empty">${message}</div>`;
+}
+
+async function fetchAllGithubRepos() {
+  const repos = [];
+  let page = 1;
+  const perPage = 100;
+
+  while (true) {
+    const response = await fetch(`${githubReposBaseUrl}?sort=updated&direction=desc&per_page=${perPage}&page=${page}`);
+    if (!response.ok) {
+      throw new Error('Não foi possível carregar os repositórios do GitHub.');
+    }
+
+    const pageRepos = await response.json();
+    repos.push(...pageRepos);
+
+    if (!Array.isArray(pageRepos) || pageRepos.length < perPage) {
+      break;
+    }
+
+    page += 1;
+  }
+
+  return repos;
+}
+
+async function loadGithubProfile() {
+  try {
+    const profileResponse = await fetch(githubApiUrl);
+    if (!profileResponse.ok) {
+      throw new Error('Não foi possível carregar dados do GitHub.');
+    }
+
+    const profile = await profileResponse.json();
+    const repos = await fetchAllGithubRepos();
+
+    githubName.textContent = profile.name || profile.login;
+    githubBio.textContent = profile.bio || 'Desenvolvedor com presença ativa no GitHub.';
+    repoCount.textContent = profile.public_repos ?? '0';
+    followersCount.textContent = profile.followers ?? '0';
+    followingCount.textContent = profile.following ?? '0';
+
+    repoGrid.innerHTML = '';
+    if (Array.isArray(repos) && repos.length > 0) {
+      repos.forEach(repo => repoGrid.appendChild(createRepoCard(repo)));
+    } else {
+      showRepoError('Nenhum repositório encontrado no momento.');
+    }
+  } catch (error) {
+    console.error(error);
+    githubName.textContent = 'GitHub indisponível';
+    githubBio.textContent = 'Verifique sua conexão ou tente novamente mais tarde.';
+    showRepoError('Não foi possível carregar os repositórios.');
+  }
+}
+
+window.addEventListener('DOMContentLoaded', loadGithubProfile);
 

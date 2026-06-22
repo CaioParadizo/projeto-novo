@@ -3,75 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amor em Contagem Regressiva</title>
+  <title>Caio Paradizo | Portfólio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="heart-background" aria-hidden="true"></div>
-  <main class="page">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">CP</span>
+      <div>
+        <p class="brand-name">Caio Paradizo</p>
+        <p class="brand-tag" data-pt="Desenvolvedor web & Criador de soluções digitais" data-en="Web Developer & Digital Solutions Creator">Desenvolvedor web & Criador de soluções digitais</p>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="#github" data-pt="GitHub" data-en="GitHub">GitHub</a>
+      <a href="#resume" data-pt="Currículo" data-en="Resume">Currículo</a>
+      <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+            <div class="header-actions">
+      <label class="language-switch">
+  <input type="checkbox" id="langToggle">
+  <span class="slider">
+    <span class="option pt">PT</span>
+    <span class="option en">EN</span>
+  </span>
+      </label>
+      <label class="theme-switch">
+  <input type="checkbox" id="themeToggle">
+  <span class="theme-slider">
+    <span>🌙</span>
+    <span>☀️</span>
+  </span>
+</label>
+</div>
+    </nav>
+  </header>
+
+  <main class="site-main">
     <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Dia dos Namorados</p>
-        <h1>Nosso Amor Conta Cada Segundo</h1>
-        <p class="subtitle">Um carrossel com momentos, fases que compartilhamos e o tempo em que somos namorados.</p>
-      </div>
-    </section>
-
-    <section class="timer-section">
-      <div class="timer-card">
-        <h2>Tempo que somos namorados</h2>
-        <input type="hidden" id="startDate" value="2011-09-07T00:00" />
-        <div class="timer-grid">
-          <div><strong id="years">00</strong><span>Anos</span></div>
-          <div><strong id="months">00</strong><span>Meses</span></div>
-          <div><strong id="days">00</strong><span>Dias</span></div>
-          <div><strong id="hours">00</strong><span>Horas</span></div>
-          <div><strong id="minutes">00</strong><span>Minutos</span></div>
-          <div><strong id="seconds">00</strong><span>Segundos</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow" data-pt="Portfólio Profissional" data-en="Professional Portfolio">Portfólio Profissional</p>
+        <h1 data-pt="Construindo experiências digitais com clareza e desempenho" data-en="Building digital experiences with clarity and performance">Construindo experiências digitais com clareza e desempenho</h1>
+        <p class="hero-text">Sou Caio Paradizo, desenvolvedor web que transforma ideias em sites modernos, acessíveis e funcionais. Aqui está meu trabalho, GitHub e currículo profissional.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#github" data-pt="Ver projetos no GitHub" data-en="View Projects on GitHub">Ver projetos no GitHub</a>
+          <a class="button secondary" href="#resume" data-pt="Ver Currículo" data-en="View Resume">Ver Currículo</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/CaioParadizo" target="_blank" rel="noreferrer"><img class= icon src="\images\2111432.png" alt="GitHub" /></a>
+          <a href="https://www.linkedin.com/in/caio-paradizo-9289a27a/" target="_blank" rel="noreferrer"><img class= icon src="\images\linkedin.jpg" alt="LinkedIn" /></a>
+          <a href="https://instagram.com/CaioParadizo" target="_blank" rel="noreferrer"><img class= icon src="\images\1384031.png" alt="Instagram" /></a>
         </div>
       </div>
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <img src="images/Captura de tela 2026-06-19 201335.png" alt="Caio Paradizo" class="profile-avatar">
+          <h2 data-pt="Olá, sou o Caio" data-en="Hello, I'm Caio">Olá, sou o Caio</h2>
+          <p data-pt="Desenvolvedor web Full Stack, performance e experiência do usuário. Entrego sites práticos e visuais que funcionam muito bem em qualquer dispositivo." data-en="Full Stack web developer, performance and user experience. I deliver practical and visually appealing websites that work exceptionally well on any device.">Desenvolvedor web Full Stack, performance e experiência do usuário. Entrego sites práticos e visuais que funcionam muito bem em qualquer dispositivo.</p>
+          <ul class="profile-list">
+            <li data-pt="HTML, CSS e JavaScript" data-en="HTML, CSS and JavaScript">HTML, CSS e JavaScript</li>
+            <li data-pt="React, Next.js, PHP, Python e SQL" data-en="React, Next.js, PHP, Python and SQL">React, Next.js, PHP, Python e SQL</li>
+            <li data-pt="Git, GitHub e Docker" data-en="Git, GitHub and Docker">Git, GitHub e Docker</li>
+          </ul>
+        </div>
+      </aside>
     </section>
 
-    <section class="carousel-section">
-      <div class="carousel" id="carousel">
-        <div class="slide active" style="background-image: url('images/Captura de tela 2026-06-12 185247.png');">
-          <div class="slide-overlay">
-            <span>Amor que faz o coração sorrir</span>
+    <section id="about" class="section about-section">
+      <div class="section-heading"><span>01</span><p data-pt="Sobre mim" data-en="About Me">Sobre mim</p></div>
+      <div class="grid two-column">
+        <div class="about-copy">
+          <p data-pt="Profissional com experiência em operações industriais e tecnologia, atuando no monitoramento de processos críticos, análise de indicadores, melhoria contínua e resolução de problemas. Atualmente curso Análise e Desenvolvimento de Sistemas, unindo minha vivência operacional ao desenvolvimento de soluções tecnológicas." data-en="Professional with experience in industrial operations and technology, working in the monitoring of critical processes, indicator analysis, continuous improvement and problem-solving. Currently studying Systems Analysis and Development, combining my operational experience with technological solution development.">Profissional com experiência em operações industriais e tecnologia, atuando no monitoramento de processos críticos, análise de indicadores, melhoria contínua e resolução de problemas. Atualmente curso Análise e Desenvolvimento de Sistemas, unindo minha vivência operacional ao desenvolvimento de soluções tecnológicas.</p>
+
+          <p data-pt="Possuo perfil analítico, proativo e orientado a resultados, com facilidade para aprender novas tecnologias e trabalhar em equipe. Tenho conhecimentos em desenvolvimento web, bancos de dados, automação de processos e suporte a sistemas, além de experiência na condução de treinamentos e no alinhamento entre diferentes áreas para garantir a eficiência operacional." data-en="I have an analytical, proactive and results-oriented profile, with ease in learning new technologies and working in a team. I have knowledge in web development, databases, process automation and system support, as well as experience in conducting training and aligning different areas to ensure operational efficiency.">Possuo perfil analítico, proativo e orientado a resultados, com facilidade para aprender novas tecnologias e trabalhar em equipe. Tenho conhecimentos em desenvolvimento web, bancos de dados, automação de processos e suporte a sistemas, além de experiência na condução de treinamentos e no alinhamento entre diferentes áreas para garantir a eficiência operacional.</p>
+
+<p data-pt="Busco oportunidades que me permitam aplicar minhas habilidades técnicas e de gestão de processos, contribuindo para a inovação, a melhoria contínua e o crescimento da organização." data-en="I am looking for opportunities that allow me to apply my technical skills and process management expertise, contributing to innovation, continuous improvement and the growth of the organization.">Busco oportunidades que me permitam aplicar minhas habilidades técnicas e de gestão de processos, contribuindo para a inovação, a melhoria contínua e o crescimento da organização.</p>
+        </div>
+        <div class="about-list">
+          <div>
+            <strong>14+</strong>
+            <span data-pt="Projetos desenvolvidos" data-en="Projects Developed">Projetos desenvolvidos</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span data-pt="Foco em usabilidade" data-en="Focus on Usability">Foco em usabilidade</span>
+          </div>
+          <div>
+            <strong>GitHub</strong>
+            <span data-pt="Repositórios atualizados" data-en="Updated Repositories">Repositórios atualizados</span>
           </div>
         </div>
-        <div class="slide" style="background-image: url('images/Captura de tela 2026-06-12 185312.png');">
-          <div class="slide-overlay">
-            <span>Você é meu melhor capítulo</span>
-          </div>
-        </div>
-        <div class="slide" style="background-image: url('images/Captura de tela 2026-06-12 185337.png');">
-          <div class="slide-overlay">
-            <span>Cada dia é um presente</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <button id="prevBtn" aria-label="Anterior">◀</button>
-        <div class="dots" id="dots"></div>
-        <button id="nextBtn" aria-label="Próximo">▶</button>
       </div>
     </section>
 
-    <section class="music-section">
-      <div class="music-card">
-        <h2>Música do nosso amor</h2>
-        <p>Ouça <strong>"Lonely Day" - System of a Down</strong> no player abaixo.</p>
-        <div class="audio-player-wrapper">
-          <audio id="audioPlayer" controls autoplay loop playsinline preload="auto">
-            <source src="audio/Sistem_Of_A_Down_-_Such_a_Lonely_day_(SkySound.cc).mp3" type="audio/mpeg" />
-            Seu navegador não suporta reprodução de áudio.
-          </audio>
+    <section id="github" class="section github-section">
+      <div class="section-heading"><span>02</span>GitHub</div>
+      <div class="github-card">
+        <div class="github-profile">
+          <img id="githubAvatar" class="github-avatar" src="images/Captura de tela 2026-06-19 201335.png" alt="Foto do perfil no GitHub">
+          <div class="github-details">
+            <p class="github-name" id="githubName">Carregando...</p>
+            <p class="github-bio" id="githubBio">Buscando informações do GitHub.</p>
+            <div class="github-stats">
+              <div><strong id="repoCount">0</strong><span data-pt="Repositórios" data-en="Repositories">Repositórios</span></div>
+              <div><strong id="followersCount">0</strong><span data-pt="Seguidores" data-en="Followers">Seguidores</span></div>
+              <div><strong id="followingCount">0</strong><span data-pt="Seguindo" data-en="Following">Seguindo</span></div>
+            </div>
+          </div>
         </div>
-        <button id="playMusicBtn" class="play-music-btn">Clique para reproduzir a música</button>
-        <p class="music-note">And if you go, I wanna go with you; and if you die, I wanna die with you.</p>
+        <div class="repo-grid" id="repoGrid">
+          <div class="repo-empty" data-pt="Buscando repositórios mais recentes..." data-en="Fetching latest repositories...">Buscando repositórios mais recentes...</div>
+        </div>
       </div>
     </section>
 
+    <section id="resume" class="section resume-section">
+      <div class="section-heading"><span>03</span><p data-pt="Currículo" data-en="Resume">Currículo</p></div>
+      <div class="grid two-column">
+        <div class="resume-copy">
+          <h2 data-pt="Resumo profissional" data-en="Professional Summary">Resumo profissional</h2>
+          <p data-pt="Sou um desenvolvedor dedicado a entregar soluções digitais com um bom equilíbrio entre estética e funcionalidade. Trabalho com criação de sites responsivos, interfaces interativas e integração com repositórios Git." data-en="I am a developer dedicated to delivering digital solutions with a good balance between aesthetics and functionality. I work with the creation of responsive websites, interactive interfaces and integration with Git repositories.">Sou um desenvolvedor dedicado a entregar soluções digitais com um bom equilíbrio entre estética e funcionalidade. Trabalho com criação de sites responsivos, interfaces interativas e integração com repositórios Git.</p>
+          <ul class="resume-highlights">
+            <li class="list" data-pt="Desenvolvimento Full stack free lancer |<br/> 2024 – atual" data-en="Full Stack Developer (Freelance) |<br/> 2024 – Present">Desenvolvimento Full stack free lancer |<br/> 2024 – atual
+            </li>  <p data-pt="Desenvolvimento de aplicações web, APIs REST e automações utilizando Python, JavaScript, PHP e SQL. Modelagem de banco de dados, manutenção de sistemas, correção de bugs e implementação de funcionalidades." data-en="Development of web applications, REST APIs and automations using Python, JavaScript, PHP and SQL. Database modeling, system maintenance, bug fixing and feature implementation.">Desenvolvimento de aplicações web, APIs REST e automações utilizando Python, JavaScript, PHP
+e SQL. Modelagem de banco de dados, manutenção de sistemas, correção de bugs e
+implementação de funcionalidades.</p>
+            <li class="list" data-pt="ArcelorMittal Tubarão | Técnico de Sala de Controle |<br/> 2019 – 2026" data-en="ArcelorMittal Tubarão | Control room Technician |<br/> 2019 – 2026 ">ArcelorMittal Tubarão | Técnico de Sala de Controle |<br/> 2019 – 2026
+</li>              <p data-pt="Responsável pelo monitoramento e sincronismo de operações críticas, atendimento a clientes internos e fornecedores, gestão de chamados para equipes de apoio, análise de indicadores e elaboração de relatórios. Atuação em projetos de melhoria contínua, treinamentos operacionais e resolução de problemas em ambiente industrial de alta complexidade." data-en="Responsible for monitoring and synchronizing critical operations, attending to internal clients and suppliers, managing tickets for support teams, analyzing indicators and preparing reports. Active in continuous improvement projects, operational training and problem-solving in a high-complexity industrial environment.">Responsável pelo monitoramento e sincronismo de operações críticas, atendimento a clientes internos e fornecedores, gestão de chamados para equipes de apoio, análise de indicadores e elaboração de relatórios. Atuação em projetos de melhoria contínua, treinamentos operacionais e resolução de problemas em ambiente industrial de alta complexidade.</p>
+            <li class="list" data-pt="Companhia Siderurgica do Pécem | Supervisor de Operações | 2015 – 2019" data-en="Siderurgical Company of Pecém | Operations Supervisor | 2015 – 2019">Companhia Siderurgica do Pécem | Supervisor de Operações | 2015 – 2019</li><p data-pt="Gestão de equipes, treinamento técnico, auditorias operacionais, planejamento de atividades e
+acompanhamento de indicadores, responsavel pela montagem da usina desde a fundação e projeto estrutural e do modelo matemático de adição de materiais para tratamento de ferro gusa, trabalhando em equipe multidisciplinar e multietinica (brasil e coréia do sul)." data-en="Team management, technical training, operational audits, activity planning and indicator monitoring, responsible for the construction of the plant from the foundation and structural project and the mathematical model for adding materials for iron ore treatment, working in a multidisciplinary and multicultural team (Brazil and South Korea).">Gestão de equipes, treinamento técnico, auditorias operacionais, planejamento de atividades e
+acompanhamento de indicadores, responsavel pela montagem da usina desde a fundação e projeto estrutural e do modelo matemático de adição de materiais para tratamento de ferro gusa, trabalhando em equipe multidisciplinar e multietinica (brasil e coréia do sul).</p>
+            <li class="list" data-pt="ArcelorMittal Tubarão | Controlador de logistica ferroviária | 2007 – 2015" data-en="ArcelorMittal Tubarão | Railway Logistics Controller | 2007 – 2015">ArcelorMittal Tubarão | Controlador de logistica ferroviária | 2007 – 2015</li><p data-pt="Coordenação logística, controle operacional e acompanhamento de indicadoresde desempenho." data-en="Logistics coordination, operational control and monitoring of performance indicators.">
+              Coordenação logística, controle operacional e acompanhamentode indicadoresde desempenho.   
+            </p>
+          </ul>
+           <a id="downloadCurriculo" class="button primary" href="Caio_Paradizo_Curriculo.pdf" rel="nofollow noopener" data-pt="Baixar currículo" data-en="Download Resume">Baixar currículo</a>
+        </div>
+        <div class="resume-details">
+          <div class="resume-block">
+            <h3 data-pt="Cursos" data-en="Courses">Cursos</h3>
+            <p data-pt="Início Rápido em Teste e QA | (2026)" data-en="Fast Track in Testing and QA | (2026)">Início Rápido em Teste e QA | (2026)</p><a href="https://www.udemy.com/certificate/UC-1f9002b3-4a0c-4254-b183-4793eb137e1a/" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+            <p data-pt="IA Generativa, LLMs e Agentes de IA (AI Agents) na Prática | (2026)" data-en="Generative AI, LLMs and AI Agents in Practice | (2026)">IA Generativa, LLMs e Agentes de IA (AI Agents) na Prática | (2026)</p><a href="https://www.udemy.com/certificate/UC-2adf6d22-0d18-49a6-b3d7-1501a5afc684/" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+            <p data-pt="Next Js do basico ao avançado | (2026)" data-en="Next Js from Basic to Advanced | (2026)">Next Js do basico ao avançado | (2026)</p><a href="https://www.udemy.com/certificate/UC-f85437f7-a19e-461d-9b02-a92a786adda9/" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+            <p data-pt="Arquitetura de Redes completo do basico ao avançado | (2026)" data-en="Network Architecture Complete from Basic to Advanced | (2026)">Arquitetura de Redes completo do basico ao avançado | (2026)</p><a href="https://www.udemy.com/certificate/UC-340c943b-a698-49b8-9862-775217ce60e1/" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+            <p data-pt="Algoritimos e Lógica de Programação | (2026)" data-en="Algorithms and Programming Logic | (2026)">Algoritimos e Lógica de Programação | (2026)</p><a href="https://www.cursoemvideo.com/certificates/certificado/?course_id=25239&cert-nonce=f7ad0715e2" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+           <p data-pt="PHP | (2026)" data-en="PHP | (2026)">PHP | (2026)</p><a href="https://www.cursoemvideo.com/certificates/certificado/?course_id=25390&cert-nonce=d006eb608e" target="_blank" rel="noreferrer"><img src="images/cert.jpg" class  = icon2 alt="Udemy" /></a>
+          </div>
+          <div class="resume-block">
+            <h3 data-pt="Habilidades" data-en="Skills">Habilidades</h3>
+            <ul>
+              <li data-pt="HTML, CSS, JavaScript" data-en="HTML, CSS and JavaScript">HTML, CSS e JavaScript</li>
+              <li data-pt="React, Next.js, PHP, MySQL, Python" data-en="React, Next.js, PHP, MySQL and Python">React, Next.js, PHP, MySQL e Python</li>
+              <li data-pt="Git, GitHub, SEO, Docker" data-en="Git, GitHub, SEO and Docker">Git, GitHub, SEO e Docker</li>
+            </ul>
+          </div>
+          <div class="resume-block">
+            <h3 data-pt="Educação" data-en="Education">Educação</h3>
+            <p data-pt="Técnologo em Analise e desenvolvimento de sistemas - Anhanguera (2026)" data-en="Technologist in Systems Analysis and Development - Anhanguera (2026)">Técnologo em Analise e desenvolvimento de sistemas - Anhanguera (2026)</p>
+            <p data-pt="Bacharelado em Engenharia de Software – Ampli (Previsão 2027)" data-en="Bachelor in Software Engineering – Ampli (Expected 2027)">Bacharelado em Engenharia de Software – Ampli (Previsão 2027)</p>
+            <p data-pt="Técnico em Metalurgia e Materiais – IEETAM (2021)" data-en="Technician in Metallurgy and Materials – IEETAM (2021)">Técnico em Metalurgia e Materiais – IEETAM (2021)</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="section-heading"><span>04</span><p data-pt="Contato" data-en="Contact">Contato</p></div>
+      <div class="contact-card">
+        <p data-pt="Use os links abaixo para entrar em contato ou conhecer meu trabalho online." data-en="Feel free to contact me or explore my work through the links below.">Use os links abaixo para entrar em contato ou conhecer meu trabalho online.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a href="mailto:caioparadizo@gmail.com"> <img class= icon1 src="\images\transferir (1).png" alt="Email" /></a>
+
+            <a href="https://github.com/CaioParadizo" target="_blank" rel="noreferrer" title="GitHub"><img class= icon src="\images\2111432.png" alt="GitHub" /></a>
+
+            <a href="https://www.linkedin.com/in/caio-paradizo-9289a27a/" target="_blank" rel="noreferrer" title="LinkedIn"><img class= icon src="\images\linkedin.jpg" alt="LinkedIn" /></a>
+
+            <a href="https://instagram.com/Caio_Paradizo" target="_blank" rel="noreferrer" title="Instagram"><img class= icon src="\images\1384031.png" alt="Instagram" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
